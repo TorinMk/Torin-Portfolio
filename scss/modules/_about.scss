@@ -1,0 +1,31 @@
+.about {
+    margin-left: 235px;
+    padding-left: 50px;
+
+        h1 {
+            font-size: 5rem;
+            text-align: center;
+        }
+
+    .about-section {
+        display:  flex;
+        align-items: center;
+        gap: 20px;
+        p {
+            flex: 1;
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+        img {
+            flex: 0 0 30%;
+            height: auto;
+            padding-right: 20px;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .about {
+        margin-left: 135px;
+    }
+}

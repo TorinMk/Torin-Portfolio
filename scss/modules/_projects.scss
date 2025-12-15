@@ -1,0 +1,43 @@
+.projects {
+    margin-left: 235px;
+    padding: 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    img {
+        width: 50%;
+        height: auto;
+        display: block;
+
+        transition: width 0.5s ease, filter 0.5s ease;
+        
+        &:hover {
+            width: 75%;
+            filter: brightness(50%);
+        }
+    }
+
+    div {
+        width: calc((100% - 60px) / 3);
+        overflow: hidden;
+    }
+
+    a, i {
+        margin-left: 4px;
+    }
+
+    h1, a, i {
+        &:hover {
+            color: rgba(0, 0, 0, 0.459);
+        }
+    }
+
+}
+
+@media (max-width: $breakpoint-md) {
+    .projects {
+        margin-left:  130px;
+    }
+}

@@ -1,0 +1,60 @@
+.contact {
+    margin-left: 300px;
+    border-radius: 3px;
+
+    .contact-items {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .contact-text {
+        padding-bottom: 20px;
+        padding-right: 50px;
+        max-width: 500px;
+        text-wrap: wrap;
+
+        h2 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
+    .contact-form {
+        flex: 1;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            .gap {
+                margin-bottom: 20px;
+            }
+
+            input {
+                padding: 12px;
+                width: 45%;
+                font-size: 16px;
+            }
+            .large {
+                width: 90%;
+            }
+            .message {
+                height: 200px;
+            }
+            button {
+                width: 150px;
+                height: 50px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .contact {
+        margin-left: 130px;
+    }
+}

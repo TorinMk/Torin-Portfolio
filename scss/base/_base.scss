@@ -1,0 +1,14 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+@media (max-width: $breakpoint-md) {
+    .coding, .projects {
+        margin-left:  130px;
+    }
+}

@@ -1,0 +1,39 @@
+header {
+    .header-wrapper {
+        display: grid;
+        place-items: center;
+        width: 100%;
+
+        img {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            grid-area: 1 / 1;
+        }
+    }
+
+    .header-text {
+        grid-area: 1 / 1;
+        text-align: center;
+        z-index: 2;
+        color: $white;
+        
+        h1 {
+            font-size: 5rem;
+        }
+        h4, a {
+            font-size: 2rem;
+        }
+    }
+    .back-to-top {
+        color: $black;
+        font-size: 5rem;
+        z-index: 999;
+    }
+}
+
+@media (max-width: $breakpoint-xlg) {
+    .header-text {
+        width: 50%;
+    }
+}
