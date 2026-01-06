@@ -7,110 +7,166 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>My Portfolio</title>
 </head>
-    <body>
-        <header>
-            <div class="header-wrapper" id="top">
-                <img src="Assets/header-bg.png">
+<body>
+    <header>
+        <div class="header-wrapper" id="top">
+            <img src="Assets/header-bg.png">
 
-                <div class="header-text">
-                    <h1>My Name is Torin Mallett</h1>
-                    <h4>I'm a Web Developer</h4>
+            <div class="header-text">
+                <h1 id="typing-text"></h1>
+                <h4>I'm a Web Developer</h4>
 
-                    <a>Scroll Down 
-                        <br> <i class="fa-solid fa-angle-down"></i>
-                    </a>
-                </div>
+                <a>Scroll Down 
+                    <br> <i class="fa-solid fa-angle-down"></i>
+                </a>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <div class="sidebar">
-            <div class="sidebar-items">
-                <h1>TM</h1>
+    <div class="sidebar">
+        <div class="sidebar-items">
+            <h1>TM</h1>
 
-                <a href="about.html">About Me</a>
-                <a href="index.html">My Portfolio</a>
-                <a href="coding.html">Coding Examples</a>
-                <a class="gap" href="scs.html">SCS Scheme</a>
+            <a href="about.html">About Me</a>
+            <a href="index.html">My Portfolio</a>
+            <a href="coding.html">Coding Examples</a>
+            <a class="gap" href="scs.html">SCS Scheme</a>
 
-                <a href="index.html#contact"><strong>Contact Me</strong></a>
+            <a href="index.html#contact"><strong>Contact Me</strong></a>
 
-                <!-- Social Media section -->
-                <div class="social-icons">
-                    <a><i class="fa-brands fa-facebook-f"></i></a>
-                    <a><i class="fa-brands fa-instagram"></i></a>
-                    <a><i class="fa-brands fa-twitter"></i></a>
-                    <a><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-
+            <!-- Social Media section -->
+            <div class="social-icons">
+                <a><i class="fa-brands fa-facebook-f"></i></a>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-brands fa-twitter"></i></a>
+                <a><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
 
-        <div class="projects" id="projects">
-            <div class="project-item">
-                <img src="Assets/Placeholder.png" alt="Placeholder">
-                <h2>Project One</h2>
-                <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+        <!-- Move menu-toggle inside sidebar -->
+        <button class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <div class="projects" id="projects">
+        <div class="project-item">
+            <img src="Assets/Placeholder.png" alt="Placeholder">
+            <h2>Project One</h2>
+            <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="project-item">
+            <img src="Assets/Placeholder.png" alt="Placeholder">
+            <h2>Project Two</h2>
+            <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="project-item">
+            <img src="Assets/Placeholder.png" alt="Placeholder">
+            <h2>Project Three</h2>
+            <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="project-item">
+            <img src="Assets/Placeholder.png" alt="Placeholder">
+            <h2>Project Four</h2>
+            <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="project-item">
+            <img src="Assets/Placeholder.png" alt="Placeholder">
+            <h2>Project Five</h2>
+            <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="project-item">
+            <img src="Assets/Placeholder.png" alt="Placeholder">
+            <h2>Project Six</h2>
+            <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <div class="contact-items">
+            <div class="contact-text">
+                <h2>Get In Touch</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+
+                <h2>00000 000000<br></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
             </div>
-            <div class="project-item">
-                <img src="Assets/Placeholder.png" alt="Placeholder">
-                <h2>Project Two</h2>
-                <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="project-item">
-                <img src="Assets/Placeholder.png" alt="Placeholder">
-                <h1>Project Three</h1>
-                <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="project-item">
-                <img src="Assets/Placeholder.png" alt="Placeholder">
-                <h1>Project Four</h1>
-                <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="project-item">
-                <img src="Assets/Placeholder.png" alt="Placeholder">
-                <h1>Project Five</h1>
-                <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="project-item">
-                <img src="Assets/Placeholder.png" alt="Placeholder">
-                <h1>Project Six</h1>
-                <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="contact-Form">
+                <form id="contactForm">
+                    <div class="gap">
+                        <input type="text" name="firstName" placeholder="First Name*" required>
+                        <input type="text"  name="lastName" placeholder="Last Name*" required> <br>
+                    </div>
+                    <input class="large" type="email" name="email" placeholder="Email Address*" required> <br>
+                    <input class="large" type="text" name="subject"  placeholder="Subject" required> <br>
+                    <textarea class="large message" name="message" type="text" placeholder="Message" required></textarea>
+
+                    <button type="submit">submit</button>
+                </form>
             </div>
         </div>
+    </div>
 
+    <div class="back-to-top">
+        <a href="#top"> Back To Top <br> <i class="fa-solid fa-angle-up"></i> </a>
+    </div>
 
-        
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const sidebar = document.querySelector(".sidebar-items");
 
-        <div class="contact" id="contact">
-            <div class="contact-items">
-                <div class="contact-text">
-                    <h2>Get In Touch</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+    </script>
 
-                    <h2>00000 000000<br></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<p>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="gap">
-                            <input type="text"  placeholder="First Name*">
-                            <input type="text"  placeholder="Last Name*"> <br>
-                        </div>
-                        <input class="large" type="email" placeholder="Email Address*"> <br>
-                        <input class="large" type="text"  placeholder="Subject"> <br>
-                        <textarea class="large  message" type="text" placeholder="Message"></textarea>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
 
-                        <button type="button">submit</button>
-                    </form>
-                </div>
+            const firstName = this.firstName.value.trim();
+            const lastName = this.lastName.value.trim();
+            const email = this.email.value.trim();
+            const message = this.message.value.trim();
 
-            </div>
-        </div>
+            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        <div class="back-to-top">
-            <a href="#top"> Back To Top <br> <i class="fa-solid fa-angle-up"></i> </a>
-        </div>
+            if (firstName === "" || lastName === "") {
+                alert("Please enter your first and last name!");
+                return;
+            }
 
+            if (!pattern.test(email)) {
+                alert("Please enter a valid email address");
+                return;
+            }
 
-    </body>
+            if (message === "") {
+                alert("Please enter a message");
+                return;
+            }
+
+            alert("Form has been submitted!");
+            this.reset();
+        });
+    </script>
+
+    <script>
+        const text = "My Name is Torin Mallett";
+        const typingSpeed = 100;
+
+        const element = document.getElementById("typing-text");
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, typingSpeed);
+            }
+        }
+
+        setTimeout(type, 500);
+    </script>
+</body>
 </html>
