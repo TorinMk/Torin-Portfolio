@@ -1,6 +1,8 @@
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // Trim removes whitespaces in forms
+
     const firstName = this.firstName.value.trim();
     const lastName = this.lastName.value.trim();
     const email = this.email.value.trim();
