@@ -8,6 +8,10 @@
         <title>Coding Examples</title>
     </head>
     <body>
+        <button class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
         <div class="sidebar">
             <div class="sidebar-items">
                 <h1>TM</h1>
@@ -36,7 +40,14 @@
                 <img src="Assets/workinprogress.jpg">
             </div>
         </div>
+    <script>
+            const menuToggle = document.querySelector(".menu-toggle");
+            const sidebar = document.querySelector(".sidebar-items");
 
+            menuToggle.addEventListener("click", () => {
+                sidebar.classList.toggle("active");
+            });
+    </script>
 
     </body>
 </html>
