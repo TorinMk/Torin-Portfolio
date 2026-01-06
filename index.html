@@ -43,10 +43,10 @@
             </div>
         </div>
 
-        <!-- Move menu-toggle inside sidebar -->
         <button class="menu-toggle">
             <i class="fa-solid fa-bars"></i>
         </button>
+
     </div>
 
     <div class="projects" id="projects">
@@ -111,62 +111,9 @@
         <a href="#top"> Back To Top <br> <i class="fa-solid fa-angle-up"></i> </a>
     </div>
 
-    <script>
-        const menuToggle = document.querySelector(".menu-toggle");
-        const sidebar = document.querySelector(".sidebar-items");
-
-        menuToggle.addEventListener("click", () => {
-            sidebar.classList.toggle("active");
-        });
-    </script>
-
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const firstName = this.firstName.value.trim();
-            const lastName = this.lastName.value.trim();
-            const email = this.email.value.trim();
-            const message = this.message.value.trim();
-
-            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (firstName === "" || lastName === "") {
-                alert("Please enter your first and last name!");
-                return;
-            }
-
-            if (!pattern.test(email)) {
-                alert("Please enter a valid email address");
-                return;
-            }
-
-            if (message === "") {
-                alert("Please enter a message");
-                return;
-            }
-
-            alert("Form has been submitted!");
-            this.reset();
-        });
-    </script>
-
-    <script>
-        const text = "My Name is Torin Mallett";
-        const typingSpeed = 100;
-
-        const element = document.getElementById("typing-text");
-        let i = 0;
-
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, typingSpeed);
-            }
-        }
-
-        setTimeout(type, 500);
-    </script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/typing.js"></script>
+    
 </body>
 </html>

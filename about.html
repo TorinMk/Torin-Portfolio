@@ -8,31 +8,32 @@
         <title>About Me</title>
     </head>
     <body>
+        
+    <div class="sidebar">
+        <div class="sidebar-items">
+            <h1>TM</h1>
+
+            <a href="about.html">About Me</a>
+            <a href="index.html">My Portfolio</a>
+            <a href="coding.html">Coding Examples</a>
+            <a class="gap" href="scs.html">SCS Scheme</a>
+
+            <a href="index.html#contact"><strong>Contact Me</strong></a>
+
+            <!-- Social Media section -->
+            <div class="social-icons">
+                <a><i class="fa-brands fa-facebook-f"></i></a>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-brands fa-twitter"></i></a>
+                <a><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
         <button class="menu-toggle">
             <i class="fa-solid fa-bars"></i>
         </button>
 
-        <div class="sidebar">
-            <div class="sidebar-items">
-                <h1>TM</h1>
-
-                <a href="about.html">About Me</a>
-                <a href="index.html">My Portfolio</a>
-                <a href="coding.html">Coding Examples</a>
-                <a class="gap" href="scs.html">SCS Scheme</a>
-
-                <a href="index.html#contact"><strong>Contact Me</strong></a>
-
-                <!-- Social Media section -->
-                <div class="social-icons">
-                    <a><i class="fa-brands fa-facebook-f"></i></a>
-                    <a><i class="fa-brands fa-instagram"></i></a>
-                    <a><i class="fa-brands fa-twitter"></i></a>
-                    <a><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-
-            </div>
-        </div>
+    </div>
 
         <div class="about">
             <h1>About</h1>
@@ -45,13 +46,7 @@
             </div>
         </div>
 
-    <script>
-            const menuToggle = document.querySelector(".menu-toggle");
-            const sidebar = document.querySelector(".sidebar-items");
+    <script src="js/sidebar.js"></script>
 
-            menuToggle.addEventListener("click", () => {
-                sidebar.classList.toggle("active");
-            });
-    </script>
     </body>
 </html>
