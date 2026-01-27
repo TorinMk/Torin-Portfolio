@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://torin-mallett.netmatters-scs.co.uk/sitemap.xml
