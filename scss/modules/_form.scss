@@ -1,0 +1,81 @@
+.contact-Form {
+    width: 100%;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.2rem;
+        width: 100%;
+        margin-right: 50px;
+    }
+
+    .gap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.2rem;
+    }
+
+    input,
+    textarea,
+    button {
+        display: block;
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    .message {
+        min-height: 220px;
+        resize: vertical;
+    }
+
+    button {
+        padding: 1rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
+
+.contact{
+    background: #f5f6f8;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+}
+
+.error-message,
+.success-message {
+    width: 100%;
+    margin: 0;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.error-message {
+    background-color: #ffe5e5;
+    border: 2px solid #ff4d4d;
+    color: #b30000;
+}
+
+.success-message {
+    background-color: #e7f9ed;
+    border: 2px solid #34c759;
+    color: #146c2e;
+}
