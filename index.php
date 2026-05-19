@@ -117,9 +117,9 @@
                 
                 
             } elseif ($dbSuccess && !$emailSuccess) {
-                $errors[] = "Message saved but email failed to send.";
+                $_SESSION['errors'] = ["Message saved but email failed to send."];
             } else {
-                $errors[] = "Something went wrong. Please try again.";
+                $_SESSION['errors'] = ["Something went wrong. Please try again."];
             }
 
             $stmt->close();
@@ -243,7 +243,6 @@
         </div>
     </div>
     <script src="js/sidebar.js"></script>
-    <script src="js/validation.js"></script>
     <script src="js/typing.js"></script>
     
 </body>
