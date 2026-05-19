@@ -10,32 +10,7 @@
     </head>
     <body>
         
-    <div class="sidebar">
-        <div class="sidebar-items">
-            <h1>TM</h1>
-
-            <a href="about.html">About Me</a>
-            <a href="index.html">My Portfolio</a>
-            <a href="coding.html">Coding Examples</a>
-            <a class="gap" href="scs.html">SCS Scheme</a>
-
-            <a href="index.html#contact"><strong>Contact Me</strong></a>
-
-            <!-- Social Media section -->
-            <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
-            </div>
-        </div>
-
-        <button class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
-    </div>
+    <?php include 'php/sidebar.php'; ?>
 
         <div class="about">
             <h1>About</h1>
