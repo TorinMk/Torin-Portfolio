@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     require 'vendor/autoload.php';
 
     use PHPMailer\PHPMailer\PHPMailer;
@@ -12,7 +14,7 @@
     $connection = openConnection();
 
     $success = '';
-    $error = '';
+    $errors = [];
 
     $fname = $lname = $email = $subject = $message = '';
 
@@ -30,20 +32,30 @@
         $subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
         $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 
-        if (
-            empty($fname) ||
-            empty($lname) ||
-            empty($email) ||
-            empty($subject) ||
-            empty($message)
-        ) {
-            $error = "Please fill in all required fields.";
+        if (empty($fname)) {
+            $errors[] = "First name is required";
+        }
 
+        if (empty($lname)) {
+            $errors[] = "Last name is required";
+        }
+
+        if (empty($email)) {
+            $errors[] = "Email is required";
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error = "Please enter a valid email address.";
+            $errors[] = "Email is invalid";
+        }
 
-        } else {
+        if (empty($subject)) {
+            $errors[] = "Subject is required";
+        }
 
+        if (empty($message)) {
+            $errors[] = "Message is required";
+        } 
+
+
+        if (empty($errors)) {
             $stmt = $connection->prepare(
                 "INSERT INTO contacts (fname, lname, email, subject, message)
                 VALUES (?, ?, ?, ?, ?)"
@@ -75,7 +87,7 @@
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                     $mail->Port = $_ENV['smtp_port'];
 
-                    $mail->setFrom($_ENV['smtp_to'], 'Portfolio Contact Form');
+                    $mail->setFrom($_ENV['smtp_from'], 'Portfolio Contact Form');
                     $mail->addAddress($_ENV['smtp_to']);
 
                     $mail->isHTML(true);
@@ -99,12 +111,15 @@
             }
 
             if ($dbSuccess && $emailSuccess) {
-                $success = "Message sent successfully!";
+                $_SESSION['success'] = "Message sent successfully!";
+                header("Location: index.php#contact");
+                exit;
+                
                 
             } elseif ($dbSuccess && !$emailSuccess) {
-                $error = "Message saved but email failed to send.";
+                $errors[] = "Message saved but email failed to send.";
             } else {
-                $error = "Something went wrong. Please try again.";
+                $errors[] = "Something went wrong. Please try again.";
             }
 
             $stmt->close();
@@ -148,13 +163,13 @@
                 <img src="Assets/netmatters-recreation.png" alt="Netmatters recreation home page">
                 <h2>Netmatters Website Recreation</h2>
                 <p>My attempt on recreating the Netmatters home page</p>
-                <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://github.com/TorinMk?tab=repositories" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="project-item">
                 <img src="Assets/JSArray.png" alt="Js Array Project Image">
                 <h2>JS Array</h2>
                 <p>A simple image generator to assign to a email</p>
-                <a>View Project <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://github.com/TorinMk/Image-Assigner" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="project-item">
                 <img src="Assets/Placeholder.png" alt="Placeholder">
@@ -194,25 +209,28 @@
                 <div class="contact-Form">
                     <form id="contactForm" method="POST" action="index.php">
 
-                        <?php if ($error): ?>
+                        <?php if (!empty($errors)): ?>
                             <div class="error-message">
-                                <?php echo $error; ?>
+                                <?php foreach ($errors as $err): ?>
+                                    <p><?= $err ?></p>
+                                <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
 
-                        <?php if ($success): ?>
+                        <?php if (isset($_SESSION['success'])): ?>
                             <div class="success-message">
-                                <?php echo $success; ?>
+                                <?= $_SESSION['success']; ?>
                             </div>
+                            <?php unset($_SESSION['success']); ?>
                         <?php endif; ?>
                         
                         <div class="gap">
-                            <input type="text" name="fname" placeholder="First Name *">
-                            <input type="text"  name="lname" placeholder="Last Name *">
+                            <input type="text" name="fname" placeholder="First Name *" value="<?= $fname ?>">
+                            <input type="text"  name="lname" placeholder="Last Name *" value="<?= $lname ?>">
                         </div>
-                        <input class="large" type="email" name="email" placeholder="Email Address *">
-                        <input class="large" type="text" name="subject"  placeholder="Subject *">
-                        <textarea class="large message" name="message" placeholder="Message *"></textarea>
+                        <input class="large" type="email" name="email" placeholder="Email Address *" value="<?= $email ?>">
+                        <input class="large" type="text" name="subject"  placeholder="Subject *" value="<?= $subject ?>">
+                        <textarea class="large message" name="message" placeholder="Message *"><?= $message ?></textarea>
 
                         <button type="submit">Submit</button>
                     </form>
@@ -225,7 +243,7 @@
         </div>
     </div>
     <script src="js/sidebar.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="js/validation.js"></script>
     <script src="js/typing.js"></script>
     
 </body>
