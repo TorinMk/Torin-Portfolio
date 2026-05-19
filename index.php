@@ -225,7 +225,6 @@
         </div>
     </div>
     <script src="js/sidebar.js"></script>
-    <script src="js/contact.js"></script>
     <script src="js/typing.js"></script>
     
 </body>
